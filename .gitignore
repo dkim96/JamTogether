@@ -1,0 +1,166 @@
+Pods/Manifest.lock
+Pods/CoreLocation.framework/CoreLocation.tbd
+Pods/CoreLocation.framework/Headers/CLAvailability.h
+Pods/CoreLocation.framework/Headers/CLBeaconRegion.h
+Pods/CoreLocation.framework/Headers/CLCircularRegion.h
+Pods/CoreLocation.framework/Headers/CLError.h
+Pods/CoreLocation.framework/Headers/CLErrorDomain.h
+Pods/CoreLocation.framework/Headers/CLGeocoder.h
+Pods/CoreLocation.framework/Headers/CLHeading.h
+Pods/CoreLocation.framework/Headers/CLLocation.h
+Pods/CoreLocation.framework/Headers/CLLocationManager+CLVisitExtensions.h
+Pods/CoreLocation.framework/Headers/CLLocationManager.h
+Pods/CoreLocation.framework/Headers/CLLocationManagerDelegate.h
+Pods/CoreLocation.framework/Headers/CLPlacemark.h
+Pods/CoreLocation.framework/Headers/CLRegion.h
+Pods/CoreLocation.framework/Headers/CLVisit.h
+Pods/CoreLocation.framework/Headers/CoreLocation.h
+Pods/CoreLocation.framework/Modules/module.modulemap
+Pods/Firebase/README.md
+Pods/Firebase/Core/Sources/Firebase.h
+Pods/Firebase/Core/Sources/module.modulemap
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/FirebaseAnalytics
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap
+Pods/FirebaseAuth/CHANGELOG.md
+Pods/FirebaseAuth/README.md
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/FirebaseAuth
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuth.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIREmailPasswordAuthProvider.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUser.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h
+Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Modules/module.modulemap
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/FirebaseCore
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/FirebaseDatabase
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Info.plist
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/NOTICE
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/_CodeSignature/CodeDirectory
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/_CodeSignature/CodeRequirements
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/_CodeSignature/CodeRequirements-1
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/_CodeSignature/CodeResources
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/_CodeSignature/CodeSignature
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h
+Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap
+Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/FirebaseInstanceID
+Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h
+Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h
+Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap
+Pods/FirebaseInstanceID/Sources/FIRInstanceID.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/FirebaseStorage
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorage.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h
+Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Modules/module.modulemap
+Pods/GoogleInterchangeUtilities/Frameworks/frameworks/GoogleInterchangeUtilities.framework/GoogleInterchangeUtilities
+Pods/GoogleSymbolUtilities/Frameworks/frameworks/GoogleSymbolUtilities.framework/GoogleSymbolUtilities
+Pods/GoogleToolboxForMac/GTMDefines.h
+Pods/GoogleToolboxForMac/LICENSE
+Pods/GoogleToolboxForMac/README.md
+Pods/GoogleToolboxForMac/DebugUtils/GTMDebugSelectorValidation.h
+Pods/GoogleToolboxForMac/DebugUtils/GTMDebugThreadValidation.h
+Pods/GoogleToolboxForMac/DebugUtils/GTMMethodCheck.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.m
+Pods/GoogleToolboxForMac/Foundation/GTMNSDictionary+URLArguments.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSDictionary+URLArguments.m
+Pods/GoogleToolboxForMac/Foundation/GTMNSString+URLArguments.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSString+URLArguments.m
+Pods/GTMSessionFetcher/LICENSE
+Pods/GTMSessionFetcher/README.md
+Pods/GTMSessionFetcher/Source/GTMSessionFetcher.h
+Pods/GTMSessionFetcher/Source/GTMSessionFetcher.m
+Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.h
+Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.m
+Pods/GTMSessionFetcher/Source/GTMSessionFetcherService.h
+Pods/GTMSessionFetcher/Source/GTMSessionFetcherService.m
+Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.h
+Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.m
+Pods/Headers/Private/Firebase/Firebase.h
+Pods/Headers/Private/FirebaseInstanceID/FIRInstanceID.h
+Pods/Headers/Public/Firebase/Firebase.h
+Pods/Headers/Public/FirebaseInstanceID/FIRInstanceID.h
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Pods/Pods.xcodeproj/project.xcworkspace/xcuserdata/danielk.xcuserdatad/UserInterfaceState.xcuserstate
+Pods/Pods.xcodeproj/project.xcworkspace/xcuserdata/danielk.xcuserdatad/WorkspaceSettings.xcsettings
+Pods/Pods.xcodeproj/xcuserdata/danielk.xcuserdatad/xcschemes/GoogleToolboxForMac.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/danielk.xcuserdatad/xcschemes/GTMSessionFetcher.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/danielk.xcuserdatad/xcschemes/Pods-Timelapse.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/danielk.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-dummy.m
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-umbrella.h
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.xcconfig
+Pods/Target Support Files/GoogleToolboxForMac/Info.plist
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher-dummy.m
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher-prefix.pch
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher-umbrella.h
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher.modulemap
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher.xcconfig
+Pods/Target Support Files/GTMSessionFetcher/Info.plist
+Pods/Target Support Files/Pods-Timelapse/Info.plist
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse-acknowledgements.markdown
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse-acknowledgements.plist
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse-dummy.m
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse-frameworks.sh
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse-resources.sh
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse-umbrella.h
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse.debug.xcconfig
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse.modulemap
+Pods/Target Support Files/Pods-Timelapse/Pods-Timelapse.release.xcconfig
+Pods/CoreLocation.framework/Headers/CLLocationManager+CLVisitExtensions.h
+Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.m
+Pods/GoogleToolboxForMac/Foundation/GTMNSDictionary+URLArguments.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSDictionary+URLArguments.m
+Pods/GoogleToolboxForMac/Foundation/GTMNSString+URLArguments.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSString+URLArguments.m
+Pods/Pods.xcodeproj/xcuserdata/danielk.xcuserdatad/xcschemes/Pods-Faction.xcscheme
+Pods/Target Support Files/Pods-Faction/Info.plist
+Pods/Target Support Files/Pods-Faction/Pods-Faction-acknowledgements.markdown
+Pods/Target Support Files/Pods-Faction/Pods-Faction-acknowledgements.plist
+Pods/Target Support Files/Pods-Faction/Pods-Faction-dummy.m
+Pods/Target Support Files/Pods-Faction/Pods-Faction-frameworks.sh
+Pods/Target Support Files/Pods-Faction/Pods-Faction-umbrella.h
+Pods/Target Support Files/Pods-Faction/Pods-Faction.debug.xcconfig
+Pods/Target Support Files/Pods-Faction/Pods-Faction.modulemap
+Pods/Target Support Files/Pods-Faction/Pods-Faction.release.xcconfig

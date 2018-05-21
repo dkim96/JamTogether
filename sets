@@ -1,0 +1,25 @@
+
+
+Example UI Sets
+
+lazy var joinButton: UIButton = {
+let button = UIButton(type: .system)
+button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+button.setTitle("", for: UIControlState()) 
+button.translatesAutoresizingMaskIntoConstraints = false
+button.setTitleColor(UIColor.white, for: UIControlState())
+button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+button.addTarget(self, action: #selector(handleConfirm), for: .touchUpInside)
+return button
+}()
+
+let nameField : UILabel = {
+let lb = UILabel()
+lb.translatesAutoresizingMaskIntoConstraints = false
+lb.textAlignment = .center
+lb.text = "username"
+lb.textColor = UIColor.white
+lb.numberOfLines = 1
+lb.font = UIFont.boldSystemFont(ofSize: 20)
+return lb
+}()

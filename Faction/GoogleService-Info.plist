@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>563478810635-hp8e49e7sj4t4q3ku10vif5e76s6s4mk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.563478810635-hp8e49e7sj4t4q3ku10vif5e76s6s4mk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCYk0tXYHViFEa2i7OfCmpMlQ_s4tOGYS8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>563478810635</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>UCLACS.JamTogether1</string>
+	<key>PROJECT_ID</key>
+	<string>jamtogether-b1f9a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jamtogether-b1f9a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:563478810635:ios:7cf1fc5cb1f3ed45</string>
+	<key>DATABASE_URL</key>
+	<string>https://jamtogether-b1f9a.firebaseio.com</string>
+</dict>
+</plist>
