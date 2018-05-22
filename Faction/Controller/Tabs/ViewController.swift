@@ -312,7 +312,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     let myStoryandGlobal: UIButton = {
         let playButton  = UIButton(type: .custom)
-        playButton.setImage(UIImage(named: "mystory.global"), for: .normal)
+        //playButton.setImage(UIImage(named: "mystory.global"), for: .normal)
         playButton.translatesAutoresizingMaskIntoConstraints = false
         playButton.contentMode = .scaleAspectFill
         //playButton.addTarget(self, action: nil, for: .touchUpInside)
