@@ -4,7 +4,7 @@ import Firebase
 import MapKit
 import CoreLocation
 
-//
+
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     let xaddphotoController = AddPhotoController()
@@ -27,82 +27,92 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
-        let leftMargin:CGFloat = 0
-        let topMargin:CGFloat = 0
-        let mapWidth:CGFloat = view.frame.size.width
-        let mapHeight:CGFloat = view.frame.size.height - 90
         
-        view.addSubview(mapView)
-        self.view.bringSubview(toFront: addPhoto);
-        addPhoto.layer.zPosition = 2
-        mapView.layer.zPosition = 1
-        
-        // Handling no user
         if FIRAuth.auth()?.currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
-        // UILPGR- long press for action
-        let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(action))
-        uilpgr.minimumPressDuration = 0.2
-        mapView.addGestureRecognizer(uilpgr)
-        mapView.delegate = self
-        
-        setupNavBar() // sets up top navigation bar
-        
-        //adds the + button
-        view.addSubview(addPhoto)
-        setupAddPhoto()
-        
-        view.addSubview(myStoryandGlobal)
-        setupMyStoryandGlobal()
-        
-        // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-            self.mapView.showsUserLocation = true
-            print("Current Location")
-            print(locationManager.location?.coordinate.latitude as Any)
-            print(locationManager.location?.coordinate.longitude as Any)
+        else{
+            
+            view.backgroundColor = UIColor.white
+            let leftMargin:CGFloat = 0
+            let topMargin:CGFloat = 0
+            let mapWidth:CGFloat = view.frame.size.width
+            let mapHeight:CGFloat = view.frame.size.height - 90
+            
+            view.addSubview(mapView)
+            self.view.bringSubview(toFront: addPhoto);
+            addPhoto.layer.zPosition = 2
+            mapView.layer.zPosition = 1
+            
+            // Handling no user
+            
+            // UILPGR- long press for action
+            let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(action))
+            uilpgr.minimumPressDuration = 0.2
+            mapView.addGestureRecognizer(uilpgr)
+            mapView.delegate = self
+            
+            setupNavBar() // sets up top navigation bar
+            
+            //adds the + button
+            view.addSubview(addPhoto)
+            setupAddPhoto()
+            
+            view.addSubview(myStoryandGlobal)
+            setupMyStoryandGlobal()
+            
+            // Ask for Authorisation from the User.
+            self.locationManager.requestAlwaysAuthorization()
+            
+            // For use in foreground
+            self.locationManager.requestWhenInUseAuthorization()
+            
+            if CLLocationManager.locationServicesEnabled() {
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                locationManager.startUpdatingLocation()
+                self.mapView.showsUserLocation = true
+                print("Current Location")
+                print(locationManager.location?.coordinate.latitude as Any)
+                print(locationManager.location?.coordinate.longitude as Any)
+            }
+            
+            mapView.frame = CGRect(x: leftMargin, y: topMargin, width: mapWidth, height: mapHeight)
+            mapView.mapType = MKMapType.standard
+            mapView.isZoomEnabled = true
+            mapView.isScrollEnabled = true
+            mapView.isRotateEnabled = false
+            let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
+            let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
+            let region = MKCoordinateRegion (center:  location,span: span)
+            
+            let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
+            mapView.setRegion(region, animated: true)
+            mapView.setCamera(mapCamera, animated: true)
+            // Or, if needed, we can position map in the center of the view
+            mapView.center = view.center
+            
+            fetchUser()
+            isColliding(curSpan: mapView.region.span.latitudeDelta)
+            view.addSubview(spanMultiplierAdd)
+            view.addSubview(spanMultiplierSub)
+            setupSpanMult()
         }
         
-        mapView.frame = CGRect(x: leftMargin, y: topMargin, width: mapWidth, height: mapHeight)
-        mapView.mapType = MKMapType.standard
-        mapView.isZoomEnabled = true
-        mapView.isScrollEnabled = true
-        mapView.isRotateEnabled = false
-        let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
-        let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
-        let region = MKCoordinateRegion (center:  location,span: span)
-
-        let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
-        mapView.setRegion(region, animated: true)
-        mapView.setCamera(mapCamera, animated: true)
-        // Or, if needed, we can position map in the center of the view
-        mapView.center = view.center
-        
-        fetchUser()
-        isColliding(curSpan: mapView.region.span.latitudeDelta)
-        view.addSubview(spanMultiplierAdd)
-        view.addSubview(spanMultiplierSub)
-        setupSpanMult()
-
     }
     override func viewDidAppear(_ animated: Bool) {
-        let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
-        let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
-        let region = MKCoordinateRegion (center:  location,span: span)
-        
-        let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
-        mapView.setRegion(region, animated: true)
-        mapView.setCamera(mapCamera, animated: true)
+        if FIRAuth.auth()?.currentUser?.uid == nil {
+            perform(#selector(handleLogout), with: nil, afterDelay: 0)
+        }
+        else{
+            let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
+            let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
+            let region = MKCoordinateRegion (center:  location,span: span)
+            
+            let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
+            mapView.setRegion(region, animated: true)
+            mapView.setCamera(mapCamera, animated: true)
+        }
     }
     
     
@@ -118,10 +128,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 self.bubbles.append(bubble)
                 
                 //print(self.bubbles.count)
-
+                
                 
                 let messagesRef = FIRDatabase.database().reference().child("users").child(bubble.fromId!).child("profileImageUrl")
-                 //let messagesRef = FIRStorage.storage().reference().child("bubble_images").child("2273DC69-0A78-48E5-8F66-2D688957E65E")
+                //let messagesRef = FIRStorage.storage().reference().child("bubble_images").child("2273DC69-0A78-48E5-8F66-2D688957E65E")
                 //print("2")
                 messagesRef.observeSingleEvent(of: .value, with: { (snapshot) in
                     
@@ -139,9 +149,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             }
             
         }, withCancel: nil)
-
+        
         //print("fetch")
-
+        
         
     }
     
@@ -171,7 +181,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 let image: UIImage = UIImage(data: data!)!
                 //self.images.append(image)
                 self.images[bubble.id!] = image
-
+                
                 let watermarkImage = UIImage.roundedRectImageFromImage(image: image, imageSize: CGSize(width: 50, height: 50), cornerRadius: CGFloat(20))
                 let backgroundImage = UIImage(named: "bluepin")
                 
@@ -193,7 +203,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 pointAnnoation = CustomPointAnnotation()
                 pointAnnoation.title = bubble.id
                 pointAnnoation.subtitle = count
-               
+                
                 self.self.counter = self.counter + 1
                 pointAnnoation.pinCustomImageName = "pin"
                 pointAnnoation.coordinate = newCoordinate
@@ -244,12 +254,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             if(output.count == 0){// no common elements
                 if(a == groups.count-1)
                 {
-                groups.append([i,j])
-                pins.append([bubbles[i].id!, bubbles[j].id!])
-                let avgLong = (bubbles[i].longitude! + bubbles[j].longitude!)/2
-                let avgLat = (bubbles[i].latitude! + bubbles[j].latitude!)/2
-                distances.append([avgLong,avgLat])
-                return
+                    groups.append([i,j])
+                    pins.append([bubbles[i].id!, bubbles[j].id!])
+                    let avgLong = (bubbles[i].longitude! + bubbles[j].longitude!)/2
+                    let avgLat = (bubbles[i].latitude! + bubbles[j].latitude!)/2
+                    distances.append([avgLong,avgLat])
+                    return
                 }
             }
             if(output.count == 1){// search for other

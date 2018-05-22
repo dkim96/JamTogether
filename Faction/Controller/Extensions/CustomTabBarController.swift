@@ -31,7 +31,7 @@ class CustomTabBarController: UITabBarController {
         
         tabBar.layer.addSublayer(topBorder)
         tabBar.clipsToBounds = true
-        self.selectedIndex = 1 // Chooses middle tab
+        self.selectedIndex = 0 // Chooses middle tab
 
         //self.selectedIndex
         if FIRAuth.auth()?.currentUser?.uid != nil {
