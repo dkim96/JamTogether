@@ -26,7 +26,7 @@ extension ViewController {
     }
     
     func handleAddPhoto() {
-        let addPhotoController = AddPhotoController()
+        let addPhotoController = CreateJamSessionController()
         let navController = UINavigationController(rootViewController: addPhotoController)
         present(navController, animated: true, completion: nil)
     }
