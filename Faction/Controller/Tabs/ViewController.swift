@@ -5,7 +5,7 @@ import MapKit
 import CoreLocation
 
 
-
+@objcMembers
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     let xaddphotoController = AddPhotoController()
     var myLatitude = Double()
@@ -27,62 +27,57 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
+        let leftMargin:CGFloat = 0
+        let topMargin:CGFloat = 0
+        let mapWidth:CGFloat = view.frame.size.width
+        let mapHeight:CGFloat = view.frame.size.height - 90
         
+        view.addSubview(mapView)
+        self.view.bringSubview(toFront: addPhoto);
+        addPhoto.layer.zPosition = 2
+        mapView.layer.zPosition = 1
+        
+        // Handling no user
         if FIRAuth.auth()?.currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
-        else{
-            
-            view.backgroundColor = UIColor.white
-            let leftMargin:CGFloat = 0
-            let topMargin:CGFloat = 0
-            let mapWidth:CGFloat = view.frame.size.width
-            let mapHeight:CGFloat = view.frame.size.height - 90
-            
-            view.addSubview(mapView)
-            self.view.bringSubview(toFront: addPhoto);
-            addPhoto.layer.zPosition = 2
-            mapView.layer.zPosition = 1
-            
-            // Handling no user
-            
-            // UILPGR- long press for action
-            let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(action))
-            uilpgr.minimumPressDuration = 0.2
-            mapView.addGestureRecognizer(uilpgr)
-            mapView.delegate = self
-            
-            setupNavBar() // sets up top navigation bar
-            
-            //adds the + button
-            view.addSubview(addPhoto)
-            setupAddPhoto()
-            
-            view.addSubview(myStoryandGlobal)
-            setupMyStoryandGlobal()
-            
-            // Ask for Authorisation from the User.
-            self.locationManager.requestAlwaysAuthorization()
-            
-            // For use in foreground
-            self.locationManager.requestWhenInUseAuthorization()
-            
-            if CLLocationManager.locationServicesEnabled() {
-                locationManager.delegate = self
-                locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                locationManager.startUpdatingLocation()
-                self.mapView.showsUserLocation = true
-                print("Current Location")
-                print(locationManager.location?.coordinate.latitude as Any)
-                print(locationManager.location?.coordinate.longitude as Any)
-            }
-            
+        // UILPGR- long press for action
+        let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(action))
+        uilpgr.minimumPressDuration = 0.2
+        mapView.addGestureRecognizer(uilpgr)
+        mapView.delegate = self
+        
+        setupNavBar() // sets up top navigation bar
+        
+        //adds the + button
+        view.addSubview(addPhoto)
+        setupAddPhoto()
+        
+        view.addSubview(myStoryandGlobal)
+        setupMyStoryandGlobal()
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            self.mapView.showsUserLocation = true
+            print("Current Location")
+            print(locationManager.location?.coordinate.latitude as Any)
+            print(locationManager.location?.coordinate.longitude as Any)
             mapView.frame = CGRect(x: leftMargin, y: topMargin, width: mapWidth, height: mapHeight)
             mapView.mapType = MKMapType.standard
             mapView.isZoomEnabled = true
             mapView.isScrollEnabled = true
             mapView.isRotateEnabled = false
-            let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
+            //let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
+            let location = CLLocationCoordinate2D(latitude: 34.0715, longitude: -118.4456)
             let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
             let region = MKCoordinateRegion (center:  location,span: span)
             
@@ -91,28 +86,26 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             mapView.setCamera(mapCamera, animated: true)
             // Or, if needed, we can position map in the center of the view
             mapView.center = view.center
-            
-            fetchUser()
-            isColliding(curSpan: mapView.region.span.latitudeDelta)
-            view.addSubview(spanMultiplierAdd)
-            view.addSubview(spanMultiplierSub)
-            setupSpanMult()
         }
+        
+
+        
+        fetchUser()
+        isColliding(curSpan: mapView.region.span.latitudeDelta)
+        view.addSubview(spanMultiplierAdd)
+        view.addSubview(spanMultiplierSub)
+        setupSpanMult()
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        if FIRAuth.auth()?.currentUser?.uid == nil {
-            perform(#selector(handleLogout), with: nil, afterDelay: 0)
-        }
-        else{
-            let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
-            let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
-            let region = MKCoordinateRegion (center:  location,span: span)
-            
-            let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
-            mapView.setRegion(region, animated: true)
-            mapView.setCamera(mapCamera, animated: true)
-        }
+        //let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
+        let location = CLLocationCoordinate2D(latitude: 34.0715, longitude: -118.4456)
+        let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
+        let region = MKCoordinateRegion (center:  location,span: span)
+        
+        let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
+        mapView.setRegion(region, animated: true)
+        mapView.setCamera(mapCamera, animated: true)
     }
     
     
@@ -319,7 +312,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     let myStoryandGlobal: UIButton = {
         let playButton  = UIButton(type: .custom)
-        //playButton.setImage(UIImage(named: "mystory.global"), for: .normal)
+        playButton.setImage(UIImage(named: "mystory.global"), for: .normal)
         playButton.translatesAutoresizingMaskIntoConstraints = false
         playButton.contentMode = .scaleAspectFill
         //playButton.addTarget(self, action: nil, for: .touchUpInside)
