@@ -46,6 +46,11 @@ var standardPage = ["pageName": "",
                     "pageType": "",
                     "backtrace": ["", "pages", ""]] as [String : AnyObject]
 
+var standardInstrument = ["instrument": "",
+                    "user": "",
+                    "skill": "",
+                    "backtrace": ["", "pages", ""]] as [String : AnyObject]
+
 let standardUser = ["time": "", // !
     "id": "", // !
     "groupScore":0,
@@ -56,27 +61,21 @@ let standardUser = ["time": "", // !
     "likes": [""],
     "settings": ["mute":false] ] as [String : AnyObject]
 
-let standardFactionFormat =
+let standardGenreFormat =
     ["latitude": "" as AnyObject, //!
         "longitude": "" as AnyObject, //!
-        "fromId": "" as AnyObject, //!
+        "creatorId": "" as AnyObject, // creator of group
         "timestamp": Int(Date().timeIntervalSince1970) as AnyObject, //test if it works properly
-        "id" : "" as AnyObject, //!
-        "groupName": "" as AnyObject, //!
-        "groupType": "" as AnyObject, //!
-        "groupStyle": "Standard", // 0.4
-        "color": "blue" as AnyObject, //~
-        "activity": 10 as AnyObject, //~
-        "private": false as AnyObject, //~
-        "entrancePermission": "Open" as AnyObject, //~
+        "id" : "" as AnyObject, // id of group
+        "sessionName": "" as AnyObject, //!
+        "genre": "" as AnyObject, //!
+        "eventDate": "" as AnyObject, // 0.4
+        "instruments": [""] as AnyObject, //~
         "description": "" as AnyObject, // ~
-        "applicationQ": [""] as AnyObject, // ~
         "groupMembers": [""] as AnyObject,
-        "groupPhoto":"" as AnyObject, // ~
-        "pages": [""] as AnyObject, //~
         "ver": ver] as [String : Any] // auto
 
-func createNewUser(name: String, email: String, password: String, profileImage: UIImage, nickname: String, controller: LoginController){
+func createNewUser(name: String, email: String, password: String, profileImage: UIImage, description: String, favInstrument: String, favGenre: String, controller: LoginController){
     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
         if error != nil {
             print(error!)
@@ -121,16 +120,13 @@ func createNewUser(name: String, email: String, password: String, profileImage: 
                 
                 let values = ["name": name,
                               "email": email,
-                              "folllowers": [""],
+                              "followers": [""],
                               "following": [""],
-                              "photos": [""],
                               "profileImageUrl": profileImageUrl,
                               "profileImageUrl2": image2url,
-                              "defaultNickname" : nickname, // 0.4
-                              "factions": [""],
-                              "userScoreValue":0,
-                              "socialMedia":["facebook":"","instagram":"","twitter":""],
-                              "caption": "hello there.",
+                              "favInstrument" : favInstrument, // 0.4
+                              "favGenre" : favGenre, // 0.4
+                              "description": "hello there.",
                               "ver": ver] as [String : Any]
                 
                 let ref = FIRDatabase.database().reference()
@@ -152,10 +148,10 @@ func createNewUser(name: String, email: String, password: String, profileImage: 
     })
 }
 
-func createNewFaction(latitude: Double, longitude: Double, fromId: String, timestamp: Int, color: String, activity: Int, groupName: String, groupType: String, privateGroup: Bool, entrancePermission: String, description: String, applicationQ: [String], groupPhoto: String) -> Bool { // return bool doesn't work
+func createNewJamSession(latitude: Double, longitude: Double, fromId: String, timestamp: Int, sessionName: String, genre: String, eventDate: String, instruments: [String], description: String, groupMembers: [String]) -> Bool { // return bool doesn't work
     
     // given multiple instances
-    let ref = FIRDatabase.database().reference().child("faction")
+    let ref = FIRDatabase.database().reference().child("jamSession")
     let childRef = ref.childByAutoId()
     var fid = childRef.key
     var returnVal = false
@@ -173,37 +169,29 @@ func createNewFaction(latitude: Double, longitude: Double, fromId: String, times
                "isCreator": true,
                "settings": ["mute":false] ] as [String : AnyObject]
     
-    let gm = GroupMember(dictionary: newUser as [String : AnyObject])
-    gms.append(gm)
+    var instrFormat = [[String:AnyObject]]()
+    for i in 0 ... instruments.count-1{
+        var standardInstrument = ["instrument": instruments[i],
+                                  "user": "",
+                                  "skill": "",
+                                  "backtrace": [fid, "instruments", i]] as [String : AnyObject]
+        instrFormat.append(standardInstrument)
+    }
     
-    // will create a page creator format, add extension to create more pages.
-    let pg1 = createPage(name: "Masthead", type: "Masthead", fid: fid, pos: "0")
-    let pg2 = createPage(name: "General", type: "Forum", fid: fid, pos: "1")
-    let pg3 = createPage(name: "Chat", type: "Chat", fid: fid, pos: "2")
-    let pg4 = createPage(name: "Questions", type: "Questions", fid: fid, pos: "3")
-    let pg5 = createPage(name: "Calendar", type: "Calendar", fid: fid, pos: "4")
-    
-    // entrancePermission = "Open", desc = "", appQ = [""], groupPhoto = ""
-    
-    var values = standardFactionFormat
+    var values = standardGenreFormat
     // THIS FORMAT OVERLOADS THE STANDARD, IF NEEDED, WHICH TO values["latitude"] = ...
     values = ["latitude": latitude as AnyObject,
-              "longitude": longitude as AnyObject,
-              "fromId": fromId as AnyObject,
-              "timestamp": timestamp as AnyObject,
-              "color": color as AnyObject,
-              "activity": activity as AnyObject,
-              "groupName": groupName as AnyObject,
-              "groupType": groupType as AnyObject,
-              "private": privateGroup as AnyObject,
-              "entrancePermission": entrancePermission as AnyObject,
-              "description": description as AnyObject,
-              "applicationQ": applicationQ as AnyObject,
-              "groupMembers": [newUser] as AnyObject,
-              "groupPhoto": groupPhoto as AnyObject,
-              "pages": [pg1,pg2,pg3,pg4,pg5] as AnyObject,
-              "ver": ver as AnyObject,
-              "id" : fid as AnyObject]
+        "longitude": longitude as AnyObject, //!
+        "creatorId": fromId as AnyObject, // creator of group
+        "timestamp": Int(Date().timeIntervalSince1970) as AnyObject, //test if it works properly
+        "id" : fid as AnyObject, // id of group
+        "sessionName": sessionName as AnyObject, //!
+        "genre": genre as AnyObject, //!
+        "eventDate": eventDate as AnyObject, // 0.4
+        "instruments": instrFormat as AnyObject, //~
+        "description": description as AnyObject, // ~
+        "groupMembers": [newUser] as AnyObject,
+        "ver": ver] as [String : Any] // auto
     
     childRef.updateChildValues(values) { (error, ref) in
         if error != nil {
@@ -217,11 +205,6 @@ func createNewFaction(latitude: Double, longitude: Double, fromId: String, times
     }
     return returnVal
 }
-
-func createPage(name: String, type: String, fid: String, pos: String) -> [String:AnyObject]{
-    return ["pageName": name, "pageType": type, "backtrace": [fid, "pages", pos]] as [String : AnyObject]
-}
-
 
 
 let userTemp = User(dictionary: standardUserFormat)

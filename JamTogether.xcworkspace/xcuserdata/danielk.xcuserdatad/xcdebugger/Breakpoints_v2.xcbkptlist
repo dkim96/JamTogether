@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Controller/Tabs/CreateJamSessionController.swift"
+            timestampString = "548897003.447268"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
+            landmarkName = "handleSend()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Faction.CreateJamSessionController.handleSend() -&gt; ()"
+                  moduleName = "Faction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/CreateJamSessionController.swift"
+                  timestampString = "548897005.077168"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "344"
+                  endingLineNumber = "344"
+                  offsetFromSymbolStart = "2792">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Faction.CreateJamSessionController.handleSend() -&gt; ()"
+                  moduleName = "Faction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/CreateJamSessionController.swift"
+                  timestampString = "548897005.079484"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "344"
+                  endingLineNumber = "344"
+                  offsetFromSymbolStart = "5736">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Protocol.swift"
+            timestampString = "548897003.4477381"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "createNewJamSession(latitude:longitude:fromId:timestamp:sessionName:genre:eventDate:instruments:description:groupMembers:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Protocol.swift"
+            timestampString = "548897003.44784"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "createNewJamSession(latitude:longitude:fromId:timestamp:sessionName:genre:eventDate:instruments:description:groupMembers:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Protocol.swift"
+            timestampString = "548897003.447925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "createNewJamSession(latitude:longitude:fromId:timestamp:sessionName:genre:eventDate:instruments:description:groupMembers:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Protocol.swift"
+            timestampString = "548897003.448004"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "createNewJamSession(latitude:longitude:fromId:timestamp:sessionName:genre:eventDate:instruments:description:groupMembers:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Protocol.swift"
+            timestampString = "548897003.448076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "createNewJamSession(latitude:longitude:fromId:timestamp:sessionName:genre:eventDate:instruments:description:groupMembers:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Faction.createNewJamSession(latitude: Swift.Double, longitude: Swift.Double, fromId: Swift.String, timestamp: Swift.Int, sessionName: Swift.String, genre: Swift.String, eventDate: Swift.String, instruments: Swift.Array&lt;Swift.String&gt;, description: Swift.String, groupMembers: Swift.Array&lt;Swift.String&gt;) -&gt; Swift.Bool"
+                  moduleName = "Faction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Protocol.swift"
+                  timestampString = "548897005.126565"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "4716">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __ObjC.FIRDatabaseReference) -&gt; () in Faction.createNewJamSession(latitude: Swift.Double, longitude: Swift.Double, fromId: Swift.String, timestamp: Swift.Int, sessionName: Swift.String, genre: Swift.String, eventDate: Swift.String, instruments: Swift.Array&lt;Swift.String&gt;, description: Swift.String, groupMembers: Swift.Array&lt;Swift.String&gt;) -&gt; Swift.Bool"
+                  moduleName = "Faction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Protocol.swift"
+                  timestampString = "548897005.128963"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Controller/Tabs/ViewController.swift"
+            timestampString = "548897003.448144"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "displayBubbles(bubble:url:count:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -220,6 +220,18 @@ class ProfileViewController: UIViewController {
         setupOverlay()
     }
     
+    func viewDidAppear() {
+        super.viewDidAppear(false)
+        navigationItem.title = "Profile"
+        // Update User into Profile
+        if(user == nil){
+            var id = FIRAuth.auth()?.currentUser?.uid
+            fetchUser(id: id!)
+        }
+        view.backgroundColor = UIColor.white
+        setupOverlay()
+    }
+    
     func handleInstagram(){
         
     }
@@ -233,10 +245,10 @@ class ProfileViewController: UIViewController {
                     // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                     self.captionField.text = user.caption
                     self.nameField.text = user.name
-                    self.followingField.text = String(user.following!.count)
-                    self.followerField.text = String(user.factions!.count)
-                    self.postField.text = String(user.userScore!)
-                    
+                    //self.followingField.text = String(user.following!.count)
+                    //self.followerField.text = String(user.factions!.count)
+                    //self.postField.text = String(user.userScore!)
+                    /*
                     if(user.socialMedia!["facebook"] != ""){
                         self.facebookView.setImage(UIImage(named: "facebook"), for: .normal)
                     }
@@ -254,7 +266,7 @@ class ProfileViewController: UIViewController {
                     
                     if(user.factions![0] == ""){
                         self.followerField.text = "0"
-                    }
+                    }*/
                     
                     if(fetchedPics[id] != nil){
                         self.avatarView.image = fetchedPics[id]

@@ -14,14 +14,18 @@ class CustomTabBarController: UITabBarController {
         let navigationController = UINavigationController(rootViewController: viewController)
         //secondNavigationController.title = "Requests"
         navigationController.tabBarItem.image = UIImage(named: "pack")
-
+        
+        //let viewController = ViewController()
+        let secondnavigationController = UINavigationController(rootViewController: CreateJamSessionController())
+        //secondNavigationController.title = "Requests"
+        secondnavigationController.tabBarItem.image = UIImage(named: "world")
         
         //let profviewController = ProfileViewController()
         let fifthNavigationController = UINavigationController(rootViewController: profviewController)
         //messengerNavigationController.title = "Messenger"
         fifthNavigationController.tabBarItem.image = UIImage(named: "profile")
         
-        viewControllers = [navigationController, fifthNavigationController]
+        viewControllers = [secondnavigationController, navigationController, fifthNavigationController]
         
         tabBar.isTranslucent = false
         
@@ -31,7 +35,7 @@ class CustomTabBarController: UITabBarController {
         
         tabBar.layer.addSublayer(topBorder)
         tabBar.clipsToBounds = true
-        self.selectedIndex = 0 // Chooses middle tab
+        self.selectedIndex = 1 // Chooses middle tab
 
         //self.selectedIndex
         if FIRAuth.auth()?.currentUser?.uid != nil {

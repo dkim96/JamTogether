@@ -78,12 +78,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             mapView.isRotateEnabled = false
             //let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
             let location = CLLocationCoordinate2D(latitude: 34.0715, longitude: -118.4456)
-            let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
+            let span = MKCoordinateSpanMake(0.0342671007638712695, 0.022689312458441482)
             let region = MKCoordinateRegion (center:  location,span: span)
             
-            let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
+            //let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
             mapView.setRegion(region, animated: true)
-            mapView.setCamera(mapCamera, animated: true)
+            //mapView.setCamera(mapCamera, animated: true)
             // Or, if needed, we can position map in the center of the view
             mapView.center = view.center
         }
@@ -100,18 +100,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidAppear(_ animated: Bool) {
         //let location = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
         let location = CLLocationCoordinate2D(latitude: 34.0715, longitude: -118.4456)
-        let span = MKCoordinateSpanMake(0.0062671007638712695, 0.003893124518441482)
+        let span = MKCoordinateSpanMake(0.0342671007638712695, 0.022689312458441482)
         let region = MKCoordinateRegion (center:  location,span: span)
         
-        let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
+        //let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
         mapView.setRegion(region, animated: true)
-        mapView.setCamera(mapCamera, animated: true)
+        //mapView.setCamera(mapCamera, animated: true)
     }
     
     
     func fetchUser() {
         
-        FIRDatabase.database().reference().child("bubbles").observe(.childAdded, with: { (snapshot) in
+        FIRDatabase.database().reference().child("jamSession").observe(.childAdded, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 //print("1")
@@ -123,7 +123,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 //print(self.bubbles.count)
                 
                 
-                let messagesRef = FIRDatabase.database().reference().child("users").child(bubble.fromId!).child("profileImageUrl")
+                let messagesRef = FIRDatabase.database().reference().child("users").child(bubble.creatorId!).child("profileImageUrl")
                 //let messagesRef = FIRStorage.storage().reference().child("bubble_images").child("2273DC69-0A78-48E5-8F66-2D688957E65E")
                 //print("2")
                 messagesRef.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -150,7 +150,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func displayBubbles(bubble: Bubble, url: String, count: String){
         // access img and loc and display as pin
-        
+        /*if(locationManager.location == nil){
+            return
+        }
         //////////////// DETERMINES IF IT IS WITHIN RADIUS FOR RECOGNITION
         let coord1 = CLLocation(latitude: bubble.latitude!, longitude: bubble.longitude!)
         let coord2 = CLLocation(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
@@ -163,7 +165,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
         else{
             print("Group outside radius", VAL)
-        }
+        }*/
         /////////////////
         
         let url = URL(string: url)

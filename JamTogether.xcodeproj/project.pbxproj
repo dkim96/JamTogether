@@ -32,6 +32,8 @@
 		E786824C1F7E1CE500B44B90 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E786824B1F7E1CE500B44B90 /* Bubble.swift */; };
 		E78682531F7F497500B44B90 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78682521F7F497500B44B90 /* PhotoViewController.swift */; };
 		E78DB62720B3968800EBC4C2 /* CreateJamSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78DB62620B3968800EBC4C2 /* CreateJamSessionController.swift */; };
+		E78DB62920B4B7F600EBC4C2 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78DB62820B4B7F600EBC4C2 /* RegistrationController.swift */; };
+		E78DB62B20B7783F00EBC4C2 /* JoinSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78DB62A20B7783F00EBC4C2 /* JoinSessionController.swift */; };
 		E7A076F81F9DDB0F0082DD16 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A076DA1F9DDB0F0082DD16 /* AsyncButton.swift */; };
 		E7A076F91F9DDB0F0082DD16 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A076DB1F9DDB0F0082DD16 /* AsyncImageView.swift */; };
 		E7A076FA1F9DDB0F0082DD16 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A076DC1F9DDB0F0082DD16 /* AutoTextView.swift */; };
@@ -107,6 +109,8 @@
 		E786824B1F7E1CE500B44B90 /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		E78682521F7F497500B44B90 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		E78DB62620B3968800EBC4C2 /* CreateJamSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJamSessionController.swift; sourceTree = "<group>"; };
+		E78DB62820B4B7F600EBC4C2 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		E78DB62A20B7783F00EBC4C2 /* JoinSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionController.swift; sourceTree = "<group>"; };
 		E7A076DA1F9DDB0F0082DD16 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		E7A076DB1F9DDB0F0082DD16 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		E7A076DC1F9DDB0F0082DD16 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 		E7253D011F79804000A263B2 /* Faction */ = {
 			isa = PBXGroup;
 			children = (
+				E73296FC1F8C314700225B8B /* CustomTabBarController.swift */,
 				E7253D021F79804000A263B2 /* AppDelegate.swift */,
 				E75CA40920B3750C008B3BEA /* Useful Functions.swift */,
 				E7E538E1207422FD00C0A461 /* Protocol.swift */,
@@ -235,7 +240,6 @@
 		E7535D972050E1120099CD93 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E73296FC1F8C314700225B8B /* CustomTabBarController.swift */,
 				E7CA04651F7DA4A6001EC04C /* LoginController+handlers.swift */,
 				E78682471F7E147400B44B90 /* ViewControllerExt.swift */,
 				E71885991F81650600745B0A /* ViewControllerMapExt.swift */,
@@ -270,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				E7253D041F79804000A263B2 /* ViewController.swift */,
+				E78DB62A20B7783F00EBC4C2 /* JoinSessionController.swift */,
 				E78DB62620B3968800EBC4C2 /* CreateJamSessionController.swift */,
 				E7D2925D1F7C64630046643F /* ProfileViewController.swift */,
 			);
@@ -363,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				E7253D141F79810500A263B2 /* LoginController.swift */,
+				E78DB62820B4B7F600EBC4C2 /* RegistrationController.swift */,
 			);
 			path = Creators;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 				E78682481F7E147400B44B90 /* ViewControllerExt.swift in Sources */,
 				E7A077121F9DDB0F0082DD16 /* TransitionManager.swift in Sources */,
 				E7253D051F79804000A263B2 /* ViewController.swift in Sources */,
+				E78DB62920B4B7F600EBC4C2 /* RegistrationController.swift in Sources */,
 				E7A0770F1F9DDB0F0082DD16 /* SpringTextField.swift in Sources */,
 				E73296FD1F8C314700225B8B /* CustomTabBarController.swift in Sources */,
 				E7A077031F9DDB0F0082DD16 /* ImageLoader.swift in Sources */,
@@ -536,6 +543,7 @@
 				E7CA04661F7DA4A6001EC04C /* LoginController+handlers.swift in Sources */,
 				E7A0770B1F9DDB0F0082DD16 /* SpringAnimation.swift in Sources */,
 				E7CDE8D9207055E400833CFC /* GroupMember.swift in Sources */,
+				E78DB62B20B7783F00EBC4C2 /* JoinSessionController.swift in Sources */,
 				E7AFB6DD2075502F00C560C7 /* ChatController.swift in Sources */,
 				E76AA888205CB18C00392BF1 /* GroupTab.swift in Sources */,
 				E7A0770E1F9DDB0F0082DD16 /* SpringLabel.swift in Sources */,

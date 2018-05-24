@@ -160,11 +160,15 @@ extension ViewController { //functions related to the mapView
             }
         }
         if(check){
+            /*
             print(annotationView.annotation?.title as Any)
             let photoviewController = PhotoViewController()
             photoviewController.photoId = ((annotationView.annotation?.title)!)!
             photoviewController.profilePic = images[((annotationView.annotation?.title)!)!]!
-            present(photoviewController, animated: true, completion: nil)
+            present(photoviewController, animated: true, completion: nil)*/
+            
+            let controller = JoinSessionController()
+            present(controller, animated: true, completion: nil)
         }
         
     }
@@ -273,7 +277,7 @@ extension ViewController { //functions related to the mapView
             print("uilpgr")
             longPressView.removeFromSuperview()
             // LONG PRESS -> NEW EXAMPLE PIN
-            /*var annotationView:MKPinAnnotationView!
+            var annotationView:MKPinAnnotationView!
              var touchPoint = gestureRecognizer.location(in: self.mapView)
              var newCoordinate: CLLocationCoordinate2D = mapView.convert(touchPoint, toCoordinateFrom: self.mapView)
              
@@ -284,7 +288,7 @@ extension ViewController { //functions related to the mapView
              pointAnnoation.customUIImage = UIImage(named: "pin")
              annotationView = MKPinAnnotationView(annotation: pointAnnoation, reuseIdentifier: "pin")
              self.mapView.addAnnotation(annotationView.annotation!)
-             //zoomToFitMapAnnotations(aMapView: mapView)*/
+             //zoomToFitMapAnnotations(aMapView: mapView)
             
             
             

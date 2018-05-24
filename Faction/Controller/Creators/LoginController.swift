@@ -8,6 +8,27 @@ class LoginController: UIViewController {
     //var messagesController: MessagesController? // optional to add to view screen line 55 fetchUserAndSetupNavBarTitle()
     var ver = "0.1"
     
+    let titleLabel : UILabel = {
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.textAlignment = .center
+        lb.text = "JamTogether"
+        lb.textColor = UIColor.black
+        lb.numberOfLines = 1
+        lb.font = UIFont.boldSystemFont(ofSize: 60)
+        return lb
+    }()
+    
+    lazy var background: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "1")
+        //imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        //imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        //imageView.isUserInteractionEnabled = true
+        return imageView
+    }()
+    
     let inputsContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -20,7 +41,7 @@ class LoginController: UIViewController {
     lazy var loginRegisterButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
-        button.setTitle("Register", for: UIControlState())
+        button.setTitle("Continue Registration", for: UIControlState())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControlState())
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -34,8 +55,22 @@ class LoginController: UIViewController {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             handleLogin()
         } else {
-            handleRegister()
+            //handleRegister()
+            handleR2()
         }
+    }
+    
+    func handleR2(){
+        if(emailTextField.text == "" || passwordTextField.text == "" || nameTextField.text == ""){
+            print("an alert should go off here cuz missing values")
+        }
+        let Controller = RegistrationController()
+        Controller.email = emailTextField.text!
+        Controller.name = nameTextField.text!
+        Controller.password = passwordTextField.text!
+        Controller.lc = self
+        let navController = UINavigationController(rootViewController: Controller)
+        present(navController, animated: true, completion: nil)
     }
     
     func handleLogin() {
@@ -99,31 +134,12 @@ class LoginController: UIViewController {
         return tf
     }()
     
-    let nicknameTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Nickname"
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.backgroundColor = UIColor.white
-        //tf.isSecureTextEntry = true
-        return tf
-    }()
-    
-    lazy var profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "gameofthrones_splash")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        
-        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
-        imageView.isUserInteractionEnabled = true
-        
-        return imageView
-    }()
+
     
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
         let sc = UISegmentedControl(items: ["Login", "Register"])
         sc.translatesAutoresizingMaskIntoConstraints = false
-        sc.tintColor = UIColor.white
+        sc.tintColor = UIColor(r: 61, g: 91, b: 151)
         sc.selectedSegmentIndex = 1
         sc.addTarget(self, action: #selector(handleLoginRegisterChange), for: .valueChanged)
         return sc
@@ -155,12 +171,30 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(r: 61, g: 91, b: 151)
+        let background = UIImage(named: "1")
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
         
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
-        view.addSubview(profileImageView)
+        //view.addSubview(profileImageView)
         view.addSubview(loginRegisterSegmentedControl)
-        view.addSubview(nicknameTextField)
+        view.addSubview(titleLabel)
+        //view.addSubview(nicknameTextField)
+        //view.addSubview(background)
+        
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        //titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        //titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        //nicknameTextField.layer.zPosition = 2
+        //background.layer.zPosition = 1
         
         setupInputsContainerView()
         setupLoginRegisterButton()
@@ -185,13 +219,8 @@ class LoginController: UIViewController {
         loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
-    func setupProfileImageView() {
-        //need x, y, width, height constraints
-        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -12).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-    }
+    func setupProfileImageView() {}
+
     
     var inputsContainerViewHeightAnchor: NSLayoutConstraint?
     var nameTextFieldHeightAnchor: NSLayoutConstraint?
@@ -260,11 +289,7 @@ class LoginController: UIViewController {
         loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        nicknameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nicknameTextField.topAnchor.constraint(equalTo: loginRegisterButton.bottomAnchor, constant: 12).isActive = true
-        nicknameTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        nicknameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -280,10 +305,7 @@ extension UIColor {
     
 }
 
-
-
-
-
+///////////////////////////////////////////////////////////////
 
 
 

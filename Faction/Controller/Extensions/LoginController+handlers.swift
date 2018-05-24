@@ -9,12 +9,13 @@ import Firebase
 
 extension LoginController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
     func handleRegister() {
-        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let profileImage = self.profileImageView.image else {
+        //guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let profileImage = self.profileImageView.image else {
             print("Form is not valid")
             return
-        }
-        createNewUser(name: name, email: email, password: password, profileImage: profileImage, nickname: nicknameTextField.text!, controller: self)
+        //}
+        //createNewUser(name: name, email: email, password: password, profileImage: profileImage, nickname: nicknameTextField.text!, controller: self)
     }
     
     
@@ -39,7 +40,8 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
         }
         
         if let selectedImage = selectedImageFromPicker {
-            profileImageView.image = selectedImage
+            //profileImageView.image = selectedImage
+            print("img selection turned off")
         }
         
         dismiss(animated: true, completion: nil)
