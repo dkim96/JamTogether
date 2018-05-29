@@ -34,6 +34,7 @@
 		E78DB62720B3968800EBC4C2 /* CreateJamSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78DB62620B3968800EBC4C2 /* CreateJamSessionController.swift */; };
 		E78DB62920B4B7F600EBC4C2 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78DB62820B4B7F600EBC4C2 /* RegistrationController.swift */; };
 		E78DB62B20B7783F00EBC4C2 /* JoinSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78DB62A20B7783F00EBC4C2 /* JoinSessionController.swift */; };
+		E78DB62D20B8CC8200EBC4C2 /* UserCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78DB62C20B8CC8200EBC4C2 /* UserCell2.swift */; };
 		E7A076F81F9DDB0F0082DD16 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A076DA1F9DDB0F0082DD16 /* AsyncButton.swift */; };
 		E7A076F91F9DDB0F0082DD16 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A076DB1F9DDB0F0082DD16 /* AsyncImageView.swift */; };
 		E7A076FA1F9DDB0F0082DD16 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A076DC1F9DDB0F0082DD16 /* AutoTextView.swift */; };
@@ -105,12 +106,23 @@
 		E75CA40720B36801008B3BEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E75CA40920B3750C008B3BEA /* Useful Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Useful Functions.swift"; sourceTree = "<group>"; };
 		E76AA887205CB18C00392BF1 /* GroupTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTab.swift; sourceTree = "<group>"; };
+		E776FE1820BE171B00B5BF10 /* PierSans-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-LightItalic.otf"; sourceTree = "<group>"; };
+		E776FE1920BE171B00B5BF10 /* PierSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-Regular.otf"; sourceTree = "<group>"; };
+		E776FE1A20BE171B00B5BF10 /* PierSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-Black.otf"; sourceTree = "<group>"; };
+		E776FE1B20BE171B00B5BF10 /* PierSans-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-Italic.otf"; sourceTree = "<group>"; };
+		E776FE1C20BE171C00B5BF10 /* PierSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-Medium.otf"; sourceTree = "<group>"; };
+		E776FE1D20BE171C00B5BF10 /* PierSans-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-BlackItalic.otf"; sourceTree = "<group>"; };
+		E776FE1E20BE171C00B5BF10 /* PierSans-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-BoldItalic.otf"; sourceTree = "<group>"; };
+		E776FE1F20BE171C00B5BF10 /* PierSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-Bold.otf"; sourceTree = "<group>"; };
+		E776FE2020BE171C00B5BF10 /* PierSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-Light.otf"; sourceTree = "<group>"; };
+		E776FE2120BE171C00B5BF10 /* PierSans-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PierSans-MediumItalic.otf"; sourceTree = "<group>"; };
 		E78682471F7E147400B44B90 /* ViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExt.swift; sourceTree = "<group>"; };
 		E786824B1F7E1CE500B44B90 /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		E78682521F7F497500B44B90 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		E78DB62620B3968800EBC4C2 /* CreateJamSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJamSessionController.swift; sourceTree = "<group>"; };
 		E78DB62820B4B7F600EBC4C2 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		E78DB62A20B7783F00EBC4C2 /* JoinSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionController.swift; sourceTree = "<group>"; };
+		E78DB62C20B8CC8200EBC4C2 /* UserCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell2.swift; sourceTree = "<group>"; };
 		E7A076DA1F9DDB0F0082DD16 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		E7A076DB1F9DDB0F0082DD16 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		E7A076DC1F9DDB0F0082DD16 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -191,6 +203,16 @@
 		E71887E8204CE3C900E58ED8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E776FE1A20BE171B00B5BF10 /* PierSans-Black.otf */,
+				E776FE1D20BE171C00B5BF10 /* PierSans-BlackItalic.otf */,
+				E776FE1F20BE171C00B5BF10 /* PierSans-Bold.otf */,
+				E776FE1E20BE171C00B5BF10 /* PierSans-BoldItalic.otf */,
+				E776FE1B20BE171B00B5BF10 /* PierSans-Italic.otf */,
+				E776FE2020BE171C00B5BF10 /* PierSans-Light.otf */,
+				E776FE1820BE171B00B5BF10 /* PierSans-LightItalic.otf */,
+				E776FE1C20BE171C00B5BF10 /* PierSans-Medium.otf */,
+				E776FE2120BE171C00B5BF10 /* PierSans-MediumItalic.otf */,
+				E776FE1920BE171B00B5BF10 /* PierSans-Regular.otf */,
 				E71887E9204CE3D600E58ED8 /* Raleway-ExtraBold.ttf */,
 				E71887EB204CE3D600E58ED8 /* Raleway-ExtraLight.ttf */,
 				E71887EA204CE3D600E58ED8 /* Raleway-Regular.ttf */,
@@ -285,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				E7D292631F7C72730046643F /* UserCell.swift */,
+				E78DB62C20B8CC8200EBC4C2 /* UserCell2.swift */,
 				E76AA887205CB18C00392BF1 /* GroupTab.swift */,
 				E7D292511F79C3560046643F /* CustomPointAnnotation.swift */,
 			);
@@ -515,6 +538,7 @@
 			files = (
 				E7CDE8D5207044E000833CFC /* Pages.swift in Sources */,
 				E7535D9B2050E1F90099CD93 /* ChatLogController.swift in Sources */,
+				E78DB62D20B8CC8200EBC4C2 /* UserCell2.swift in Sources */,
 				E7A076FD1F9DDB0F0082DD16 /* DesignableImageView.swift in Sources */,
 				E7D2925A1F7C64430046643F /* SearchViewController.swift in Sources */,
 				E7A077101F9DDB0F0082DD16 /* SpringTextView.swift in Sources */,

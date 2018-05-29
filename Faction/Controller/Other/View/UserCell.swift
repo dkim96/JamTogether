@@ -63,7 +63,8 @@ class UserCell: UITableViewCell {
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 24
+        imageView.image = UIImage(named: "kanye_profile")
+        imageView.layer.cornerRadius = 45
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -71,37 +72,55 @@ class UserCell: UITableViewCell {
     
     let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "HH:MM:SS"
-        label.font = UIFont(name: "Raleway-Medium", size: 13)
-        label.textColor = UIColor.white
+        label.text = "Time:   Jul 26, 2018 - 9:00 PM"
+        label.font = UIFont(name: "Raleway-Medium", size: 16)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let distanceLabel: UILabel = {
+    let genreLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Genre:   Hip-hop"
+        label.font = UIFont(name: "Raleway-Medium", size: 16)
+        label.textColor = UIColor.black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Come and join us!"
+        label.font = UIFont(name: "Raleway-Medium", size: 16)
+        label.textColor = UIColor.black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    let distanceLabel: UILabel = { // X
         let label = UILabel()
         label.text = "-1"
         label.font = UIFont(name: "Raleway-Medium", size: 13)
-        label.textColor = UIColor.white
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let mainLabel: UILabel = {
+    let mainLabel: UILabel = { // nameLabel
         let label = UILabel()
-        label.text = "GroupName"
+        label.text = "Maroon 6"
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.font = UIFont(name: "Raleway-ExtraBold", size: 20)
-        label.textColor = UIColor.white
+        label.font = UIFont(name: "Raleway-ExtraBold", size: 30)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let typeLabel: UILabel = {
+    let typeLabel: UILabel = { //hosted by
         let label = UILabel()
-        label.text = "GroupType"
-        label.font = UIFont(name: "Raleway-Medium", size: 13)
-        label.textColor = UIColor.white
+        label.text = "Hosted by Ryan Wang"
+        label.font = UIFont(name: "Raleway-Medium", size: 18)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -110,8 +129,8 @@ class UserCell: UITableViewCell {
     let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "ftn_blue")
-        imageView.layer.cornerRadius = 24
+        imageView.image = UIImage(named: "2")
+        //imageView.layer.cornerRadius = 24
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -119,55 +138,50 @@ class UserCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        
-        addSubview(photoImageView)
-        addSubview(profileImageView)
-        addSubview(timeLabel)
-        addSubview(distanceLabel)
-        addSubview(mainLabel)
-        addSubview(typeLabel)
+        // editing for jamtogether
+        addSubview(photoImageView) // blue background overlay
+        addSubview(profileImageView) // creator profile img on top right
+        addSubview(timeLabel) // showing the time
+        //addSubview(distanceLabel) // X
+        addSubview(mainLabel) // change to nameLabel, name of session
+        addSubview(typeLabel) // change to Hosted by creator
+        addSubview(genreLabel)
+        addSubview(descriptionLabel)
+        // needed labels: genrelabel description label
         //addSubview(textLabel!)
-        
         photoImageView.layer.zPosition = 0
         
         //ios 9 constraint anchors
         //need x,y,width,height anchors
-        profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 48).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        
-        //need x,y,width,height anchors
-        timeLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25).isActive = true
-        timeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 38).isActive = true
-        timeLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        timeLabel.heightAnchor.constraint(equalTo: (textLabel?.heightAnchor)!).isActive = true
-        
-        distanceLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25).isActive = true
-        distanceLabel.topAnchor.constraint(equalTo: self.timeLabel.bottomAnchor, constant: 8).isActive = true
-        distanceLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        distanceLabel.heightAnchor.constraint(equalTo: (textLabel?.heightAnchor)!).isActive = true
         
         photoImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        photoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 1).isActive = true
+        photoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         //photoImageView.widthAnchor.constraint(equalToConstant: 505).isActive = true
-        //photoImageView.heightAnchor.constraint(equalToConstant: 125).isActive = true
- 
-        mainLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        mainLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 35).isActive = true
-        mainLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        mainLabel.heightAnchor.constraint(equalTo: (textLabel?.heightAnchor)!).isActive = true
+        //photoImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
-        typeLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        typeLabel.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: 15).isActive = true
-        typeLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        typeLabel.heightAnchor.constraint(equalTo: (textLabel?.heightAnchor)!).isActive = true
+        profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25).isActive = true
+        profileImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        mainLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 30).isActive = true
+        mainLabel.topAnchor.constraint(equalTo: profileImageView.topAnchor, constant: 5).isActive = true
+        //mainLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        //mainLabel.heightAnchor.constraint(equalTo: (textLabel?.heightAnchor)!).isActive = true
+        
+        typeLabel.leftAnchor.constraint(equalTo: mainLabel.leftAnchor).isActive = true
+        typeLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 10).isActive = true
+        //typeLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        //typeLabel.heightAnchor.constraint(equalTo: (textLabel?.heightAnchor)!).isActive = true
+        
+        //need x,y,width,height anchors
+        timeLabel.leftAnchor.constraint(equalTo: profileImageView.leftAnchor).isActive = true
+        timeLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 50).isActive = true
+        genreLabel.leftAnchor.constraint(equalTo: profileImageView.leftAnchor).isActive = true
+        genreLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 10).isActive = true
+        descriptionLabel.leftAnchor.constraint(equalTo: profileImageView.leftAnchor).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: genreLabel.bottomAnchor, constant: 10).isActive = true
 
- 
-        /*NSLayoutConstraint.activate([
-            textLabel?.topAnchor.constraint(equalTo: profileImageView.topAnchor, constant: 10),
-            textLabel?.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 10)
-            ])*/
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -4,7 +4,6 @@ import UIKit
 import Firebase
 
 var tabbar = CustomTabBarController()
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

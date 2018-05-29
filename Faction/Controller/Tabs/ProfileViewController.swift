@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
     
     let backgroundView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "background")
+        imageView.image = UIImage(named: "2")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -125,9 +125,9 @@ class ProfileViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
         lb.text = "username"
-        lb.textColor = UIColor.white
+        lb.textColor = UIColor.black
         lb.numberOfLines = 1
-        lb.font = UIFont.boldSystemFont(ofSize: 20)
+        lb.font = UIFont.boldSystemFont(ofSize: 30)
         return lb
     }()
     
@@ -135,21 +135,23 @@ class ProfileViewController: UIViewController {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
-        lb.text = "caption"
-        lb.textColor = UIColor.gray
+        lb.text = "Instruments"
+        lb.textColor = UIColor.black
         lb.numberOfLines = 1
         lb.font = UIFont.boldSystemFont(ofSize: 15)
         return lb
     }()
     
+
+    
     let postField : UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
-        lb.text = "999"
-        lb.textColor = UIColor.white
+        lb.text = "Favorite Instrument"
+        lb.textColor = UIColor.black
         lb.numberOfLines = 1
-        lb.font = UIFont.systemFont(ofSize: 18)
+        lb.font = UIFont(name: "Raleway-ExtraBold", size: 30)
         return lb
     }()
     
@@ -157,10 +159,10 @@ class ProfileViewController: UIViewController {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
-        lb.text = "Score"
-        lb.textColor = UIColor.gray
+        lb.text = "---"
+        lb.textColor = UIColor.black
         lb.numberOfLines = 1
-        lb.font = UIFont.systemFont(ofSize: 12)
+        lb.font = UIFont(name: "Raleway-ExtraLight", size: 25)
         return lb
     }()
     
@@ -168,10 +170,10 @@ class ProfileViewController: UIViewController {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
-        lb.text = "999"
-        lb.textColor = UIColor.white
+        lb.text = "Favorite Genre"
+        lb.textColor = UIColor.black
         lb.numberOfLines = 1
-        lb.font = UIFont.systemFont(ofSize: 18)
+        lb.font = UIFont(name: "Raleway-ExtraBold", size: 30)
         return lb
     }()
     
@@ -179,10 +181,10 @@ class ProfileViewController: UIViewController {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
-        lb.text = "Factions"
-        lb.textColor = UIColor.gray
+        lb.text = "--"
+        lb.textColor = UIColor.black
         lb.numberOfLines = 1
-        lb.font = UIFont.systemFont(ofSize: 12)
+        lb.font = UIFont(name: "Raleway-ExtraLight", size: 25)
         return lb
     }()
     
@@ -190,10 +192,10 @@ class ProfileViewController: UIViewController {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
-        lb.text = "999"
-        lb.textColor = UIColor.white
+        lb.text = "Description"
+        lb.textColor = UIColor.black
         lb.numberOfLines = 1
-        lb.font = UIFont.systemFont(ofSize: 18)
+        lb.font = UIFont(name: "Raleway-ExtraBold", size: 30)
         return lb
     }()
     
@@ -201,10 +203,10 @@ class ProfileViewController: UIViewController {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
-        lb.text = "Friends"
-        lb.textColor = UIColor.gray
+        lb.text = "---"
+        lb.textColor = UIColor.black
         lb.numberOfLines = 1
-        lb.font = UIFont.systemFont(ofSize: 12)
+        lb.font = UIFont(name: "Raleway-ExtraLight", size: 25)
         return lb
     }()
     
@@ -245,6 +247,9 @@ class ProfileViewController: UIViewController {
                     // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                     self.captionField.text = user.caption
                     self.nameField.text = user.name
+                    self.npostField.text = user.favInstrument
+                    self.nfollowerField.text = user.favGenre
+                    self.nfollowingField.text = user.descript
                     //self.followingField.text = String(user.following!.count)
                     //self.followerField.text = String(user.factions!.count)
                     //self.postField.text = String(user.userScore!)
@@ -289,14 +294,14 @@ class ProfileViewController: UIViewController {
     
     func setupOverlay() {
         view.addSubview(backgroundView)
-        view.addSubview(overlayView)
+        //view.addSubview(overlayView)
         view.addSubview(nameField)
-        view.addSubview(captionField)
-        view.addSubview(moreB)
+        //view.addSubview(captionField)
+        //view.addSubview(moreB)
         //view.addSubview(followB)
-        view.addSubview(subMenuView)
+        //view.addSubview(subMenuView)
         view.addSubview(avatarView)
-        view.addSubview(imagesView)
+        //view.addSubview(imagesView)
         view.addSubview(postField)
         view.addSubview(npostField)
         view.addSubview(followerField)
@@ -304,17 +309,50 @@ class ProfileViewController: UIViewController {
         view.addSubview(nfollowerField)
         view.addSubview(nfollowingField)
         
-        view.addSubview(instagramView)
-        view.addSubview(facebookView)
-        view.addSubview(twitterView)
+        //view.addSubview(instagramView)
+        //view.addSubview(facebookView)
+        //view.addSubview(twitterView)
         
-        overlayView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        overlayView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
+        //overlayView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //overlayView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
         
         backgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
+        backgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         
-        moreB.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        avatarView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        avatarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        avatarView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        avatarView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        NSLayoutConstraint.activate([
+            nameField.leftAnchor.constraint(equalTo: avatarView.rightAnchor, constant: 20),
+            nameField.topAnchor.constraint(equalTo: avatarView.topAnchor, constant: 30)])
+        
+        NSLayoutConstraint.activate([
+            postField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            postField.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 60)])
+        
+        NSLayoutConstraint.activate([
+            npostField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            npostField.topAnchor.constraint(equalTo: postField.bottomAnchor, constant: 20)])
+        
+        NSLayoutConstraint.activate([
+            followerField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            followerField.topAnchor.constraint(equalTo: npostField.bottomAnchor, constant: 20)])
+        
+        NSLayoutConstraint.activate([
+            nfollowerField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            nfollowerField.topAnchor.constraint(equalTo: followerField.bottomAnchor, constant: 20)])
+        
+        NSLayoutConstraint.activate([
+            followingField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            followingField.topAnchor.constraint(equalTo: nfollowerField.bottomAnchor, constant: 20)])
+        
+        NSLayoutConstraint.activate([
+            nfollowingField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            nfollowingField.topAnchor.constraint(equalTo: followingField.bottomAnchor, constant: 20)])
+        
+        /*moreB.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
         moreB.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 35).isActive = true
         
         instagramView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
@@ -335,64 +373,19 @@ class ProfileViewController: UIViewController {
         subMenuView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         subMenuView.topAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: 15).isActive = true
         
-        avatarView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        avatarView.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 30).isActive = true
-        avatarView.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        avatarView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         imagesView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imagesView.topAnchor.constraint(equalTo: subMenuView.bottomAnchor, constant: 15).isActive = true
-        
-        NSLayoutConstraint.activate([
-            nameField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nameField.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 10),
-            nameField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            nameField.heightAnchor.constraint(equalToConstant: 20)])
         
         NSLayoutConstraint.activate([
             captionField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             captionField.topAnchor.constraint(equalTo: nameField.bottomAnchor),
             captionField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             captionField.heightAnchor.constraint(equalToConstant: 20)])
-        
-        NSLayoutConstraint.activate([
-            postField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -110),
-            postField.topAnchor.constraint(equalTo: captionField.bottomAnchor, constant: 10),
-            postField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            postField.heightAnchor.constraint(equalToConstant: 20)])
-        
-        NSLayoutConstraint.activate([
-            npostField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -110),
-            npostField.topAnchor.constraint(equalTo: postField.bottomAnchor, constant: 0),
-            npostField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            npostField.heightAnchor.constraint(equalToConstant: 20)])
-        
-        NSLayoutConstraint.activate([
-            followerField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            followerField.topAnchor.constraint(equalTo: captionField.bottomAnchor, constant: 10),
-            followerField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            followerField.heightAnchor.constraint(equalToConstant: 20)])
-        
-        NSLayoutConstraint.activate([
-            nfollowerField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nfollowerField.topAnchor.constraint(equalTo: followerField.bottomAnchor, constant: 0),
-            nfollowerField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            nfollowerField.heightAnchor.constraint(equalToConstant: 20)])
-        
-        NSLayoutConstraint.activate([
-            followingField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 110),
-            followingField.topAnchor.constraint(equalTo: captionField.bottomAnchor, constant: 10),
-            followingField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            followingField.heightAnchor.constraint(equalToConstant: 20)])
-        
-        NSLayoutConstraint.activate([
-            nfollowingField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 110),
-            nfollowingField.topAnchor.constraint(equalTo: followingField.bottomAnchor, constant: 0),
-            nfollowingField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            nfollowingField.heightAnchor.constraint(equalToConstant: 20)])
+        */
     }
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+        override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
     

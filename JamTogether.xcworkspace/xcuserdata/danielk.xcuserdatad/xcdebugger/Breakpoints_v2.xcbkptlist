@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Faction/Controller/Tabs/CreateJamSessionController.swift"
-            timestampString = "548897003.447268"
+            timestampString = "549329099.419291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "344"
@@ -26,12 +26,12 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/CreateJamSessionController.swift"
-                  timestampString = "548897005.077168"
+                  timestampString = "549329401.548028"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "344"
                   endingLineNumber = "344"
-                  offsetFromSymbolStart = "2792">
+                  offsetFromSymbolStart = "3694">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/CreateJamSessionController.swift"
-                  timestampString = "548897005.079484"
+                  timestampString = "549329401.549952"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "344"
                   endingLineNumber = "344"
-                  offsetFromSymbolStart = "5736">
+                  offsetFromSymbolStart = "7673">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Faction/Protocol.swift"
-            timestampString = "548897003.4477381"
+            timestampString = "549329401.395879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Faction/Protocol.swift"
-            timestampString = "548897003.44784"
+            timestampString = "549329401.395939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Faction/Protocol.swift"
-            timestampString = "548897003.447925"
+            timestampString = "549329401.395983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Faction/Protocol.swift"
-            timestampString = "548897003.448004"
+            timestampString = "549329401.396022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Faction/Protocol.swift"
-            timestampString = "548897003.448076"
+            timestampString = "549329401.3960609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
@@ -138,12 +138,12 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Protocol.swift"
-                  timestampString = "548897005.126565"
+                  timestampString = "549329401.568956"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "196"
                   endingLineNumber = "196"
-                  offsetFromSymbolStart = "4716">
+                  offsetFromSymbolStart = "6602">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -153,12 +153,12 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Protocol.swift"
-                  timestampString = "548897005.128963"
+                  timestampString = "549329401.5709161"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "157"
                   endingLineNumber = "157"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "39">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -169,14 +169,46 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Faction/Controller/Tabs/ViewController.swift"
-            timestampString = "548897003.448144"
+            filePath = "Faction/Controller/Tabs/JoinSessionController.swift"
+            timestampString = "549328003.399519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "displayBubbles(bubble:url:count:)"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Faction.JoinSessionController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "Faction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/JoinSessionController.swift"
+                  timestampString = "549098415.702381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "11076">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Faction.JoinSessionController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "Faction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/JoinSessionController.swift"
+                  timestampString = "549098415.704314"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "13619">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

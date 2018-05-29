@@ -18,6 +18,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     var bubbles = [Bubble]()
     var images = [String:UIImage]()
+    var bubbleref = [String:Bubble]()
     var groups = [[Int]]()
     var distances = [[Double]]()
     var pins = [[String]]()
@@ -88,7 +89,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             mapView.center = view.center
         }
         
-
+        
         
         fetchUser()
         isColliding(curSpan: mapView.region.span.latitudeDelta)
@@ -112,33 +113,41 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func fetchUser() {
         
         FIRDatabase.database().reference().child("jamSession").observe(.childAdded, with: { (snapshot) in
-            
             if let dictionary = snapshot.value as? [String: AnyObject] {
-                //print("1")
                 let bubble = Bubble(dictionary: dictionary)
                 bubble.id = snapshot.key
-                //print(bubble.id)
                 self.bubbles.append(bubble)
-                
-                //print(self.bubbles.count)
-                
-                
                 let messagesRef = FIRDatabase.database().reference().child("users").child(bubble.creatorId!).child("profileImageUrl")
-                //let messagesRef = FIRStorage.storage().reference().child("bubble_images").child("2273DC69-0A78-48E5-8F66-2D688957E65E")
-                //print("2")
                 messagesRef.observeSingleEvent(of: .value, with: { (snapshot) in
                     
                     guard let photoLink = snapshot.value else {return}
                     //print("!")
                     self.displayBubbles(bubble: bubble, url: photoLink as! String, count: String(self.bubbles.count-1))
                     
-                    
                 }, withCancel: nil)
-                
-                //this will crash because of background thread, so lets use dispatch_async to fix
+                //
                 DispatchQueue.main.async(execute: {
-                    //self.tableView.reloadData()
+                    
+                    var newPeople = [String]()
+                    for i in 0...(bubble.groupMembers?.count)!-1{
+                        var person = bubble.groupMembers![i]["id"] as! String
+                        if(fetchedNames[person] == nil){
+                            newPeople.append(person)
+                        }
+                        if(i == (bubble.groupMembers?.count)!-1 && newPeople.count == 0){
+                            print("End by no new people")
+                        }
+                    }
+                    self.counter = 0
+                    if(newPeople.count != 0){
+                        for i in 0...newPeople.count-1{
+                            //print(gvc.faction.groupMembers![i]["id"])
+                            self.fetchNameandPic(id: newPeople[i] as! String, i:i, np: newPeople.count-1, j: self.counter)
+                        }
+                    }
+
                 })
+
             }
             
         }, withCancel: nil)
@@ -148,34 +157,56 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
+    
+    func fetchNameandPic(id: String, i: Int, np: Int, j: Int){
+        FIRDatabase.database().reference().child("users").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String:AnyObject] { // fill in type with suspected type
+                var ref = dictionary
+                //DispatchQueue.main.async(execute: {
+                // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                let picName = ref["profileImageUrl"] as! String
+                //print(picName)
+                let store = FIRStorage.storage()
+                let storeRef = store.reference(forURL: picName)
+                
+                storeRef.data(withMaxSize: 1 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        print("error: \(error.localizedDescription)")
+                    } else {
+                        let image = UIImage(data: data!)
+                        fetchedPics[id] = image
+                        fetchedNames[id] = (ref["name"] as! String)
+                        print("loading \(ref["name"] as! String)")
+                        //fetchedPics[id] = image
+                    }
+                    DispatchQueue.main.async {
+                        self.counter = self.counter + 1
+                        //print(self.counter)
+                        if (self.counter-1 == np){
+                            self.counter = 0
+                            print("End by last loaded person")
+                            //gvc.getMemberNames()
+                            //self.navigationController?.pushViewController(gvc, animated: true)
+                        }
+                    }
+                }
+                
+                // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                //})
+            }
+        }, withCancel: nil)
+    }
+    
+    
     func displayBubbles(bubble: Bubble, url: String, count: String){
-        // access img and loc and display as pin
-        /*if(locationManager.location == nil){
-            return
-        }
-        //////////////// DETERMINES IF IT IS WITHIN RADIUS FOR RECOGNITION
-        let coord1 = CLLocation(latitude: bubble.latitude!, longitude: bubble.longitude!)
-        let coord2 = CLLocation(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
-        //print("Distance from ")
-        let VAL = coord1.distance(from: coord2)
-        //print(VAL)
-        distFromUser.append(VAL)
-        if(VAL < 1000){
-            print("Group within radius", VAL)
-        }
-        else{
-            print("Group outside radius", VAL)
-        }*/
-        /////////////////
-        
         let url = URL(string: url)
-        
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
             DispatchQueue.main.async {
                 let image: UIImage = UIImage(data: data!)!
                 //self.images.append(image)
                 self.images[bubble.id!] = image
+                self.bubbleref[bubble.id!] = bubble
                 
                 let watermarkImage = UIImage.roundedRectImageFromImage(image: image, imageSize: CGSize(width: 50, height: 50), cornerRadius: CGFloat(20))
                 let backgroundImage = UIImage(named: "bluepin")

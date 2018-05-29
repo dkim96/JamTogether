@@ -794,7 +794,7 @@ class TimeController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let datePicker: UIDatePicker = UIDatePicker()
         
         // Posiiton date picket within a view
-        datePicker.frame = CGRect(x: 10, y: 400, width: self.view.frame.width, height: 200)
+        datePicker.frame = CGRect(x: 10, y: 300, width: self.view.frame.width, height: 200)
         
         // Set some of UIDatePicker properties
         datePicker.timeZone = NSTimeZone.local

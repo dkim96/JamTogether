@@ -168,6 +168,7 @@ extension ViewController { //functions related to the mapView
             present(photoviewController, animated: true, completion: nil)*/
             
             let controller = JoinSessionController()
+            controller.sessionInfo = bubbleref[((annotationView.annotation?.title)!)!]!
             present(controller, animated: true, completion: nil)
         }
         

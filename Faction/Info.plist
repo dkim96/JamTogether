@@ -38,6 +38,8 @@
 	<string>You can select photos to attach to reports.</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>PierSans-Light.otf</string>
+		<string>PierSans-Bold.otf</string>
 		<string>Raleway-ExtraBold.ttf</string>
 		<string>Raleway-ExtraLight.ttf</string>
 		<string>Raleway-Regular.ttf</string>

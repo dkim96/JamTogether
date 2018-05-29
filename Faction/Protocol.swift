@@ -126,7 +126,7 @@ func createNewUser(name: String, email: String, password: String, profileImage: 
                               "profileImageUrl2": image2url,
                               "favInstrument" : favInstrument, // 0.4
                               "favGenre" : favGenre, // 0.4
-                              "description": "hello there.",
+                              "description": description,
                               "ver": ver] as [String : Any]
                 
                 let ref = FIRDatabase.database().reference()

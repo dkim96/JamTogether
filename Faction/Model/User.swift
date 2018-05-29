@@ -19,6 +19,10 @@ class User: NSObject {
     var ver: String?
     var defaultNickname: String?
     
+    var descript: String?
+    var favGenre: String?
+    var favInstrument: String?
+    
     init(dictionary: [String: AnyObject]) {
         self.id = dictionary["id"] as? String
         self.name = dictionary["name"] as? String
@@ -34,6 +38,10 @@ class User: NSObject {
         self.caption = dictionary["caption"] as? String
         self.ver = dictionary["ver"] as? String
         self.defaultNickname = dictionary["defaultNickname"] as? String
+        
+        self.descript = dictionary["description"] as? String
+        self.favGenre = dictionary["favGenre"] as? String
+        self.favInstrument = dictionary["favInstrument"] as? String
     }
     
     override init() {
