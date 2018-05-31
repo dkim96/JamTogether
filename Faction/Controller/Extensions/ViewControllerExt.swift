@@ -40,11 +40,21 @@ extension ViewController {
         //navigationItem.titleView = imageView
         let searchx = UIImage(named: "search")
         let imageView2 = UIImageView(image:searchx)
-        let doneItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: nil, action: #selector(getter: UIAccessibilityCustomAction.selector))
-        doneItem.tintColor = UIColor.black
-        navigationItem.rightBarButtonItem = doneItem;
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(handleRefresh))
+        //doneItem.tintColor = UIColor.black
+        //navigationItem.rightBarButtonItem = doneItem;
         
 
+    }
+    
+    func handleRefresh(){
+        //remove set annotations, bubbles, etc
+        // refetch
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        images.removeAll()
+        bubbleref.removeAll()
+        bubbles.removeAll()
+        fetchUser()
     }
     
 

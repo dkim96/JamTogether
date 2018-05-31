@@ -60,9 +60,16 @@ class LoginController: UIViewController {
         }
     }
     
+    let alert: UIAlertController = {
+        let at = UIAlertController(title: "Unable to continue", message: "A text field cannot be empty and the password must be 6 unique characters.", preferredStyle: .alert)
+        at.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        return at
+    }()
+    
     func handleR2(){
-        if(emailTextField.text == "" || passwordTextField.text == "" || nameTextField.text == ""){
-            print("an alert should go off here cuz missing values")
+        if(emailTextField.text == "" || passwordTextField.text == "" || nameTextField.text == "" || (passwordTextField.text?.count)! < 6){
+            self.present(alert, animated: true)
+            return
         }
         let Controller = RegistrationController()
         Controller.email = emailTextField.text!

@@ -106,7 +106,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         //let mapCamera = MKMapCamera(lookingAtCenter: location, fromDistance: 1200, pitch: 28, heading: 360)
         mapView.setRegion(region, animated: true)
-        //mapView.setCamera(mapCamera, animated: true)
+        if(fetchedNames.count == 0){
+            handleRefresh()
+        }
     }
     
     

@@ -107,6 +107,19 @@ class RegistrationController: UIViewController, UITextFieldDelegate, UITextViewD
         return button
     }()
     
+    lazy var backButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.contentHorizontalAlignment = .left
+        //button.titleEdgeInsets = UIEdgeInsetsMake(0.0, 10.0, 0.0, 0.0)
+        //button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.setTitle("Back", for: UIControlState())
+        button.translatesAutoresizingMaskIntoConstraints = false
+        //button.setTitleColor(UIColor.white, for: UIControlState())
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
+        return button
+    }()
+    
     let genreInput : UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
@@ -143,6 +156,9 @@ class RegistrationController: UIViewController, UITextFieldDelegate, UITextViewD
     }()
     
     /////////////////
+    @objc func handleBack(){
+        dismiss(animated: true, completion: nil)
+    }
     
     @objc func handleCheck() {
         let dummySettingsViewController = EntranceTVController()
@@ -159,7 +175,7 @@ class RegistrationController: UIViewController, UITextFieldDelegate, UITextViewD
     
     func handleCreateGroup() {
         // check for profile picture
-        if(profileImageView.image == UIImage(named: "default-profile"))
+        if(profileImageView.image == UIImage(named: "default-profile") || insInput.text == "none" || genreInput.text == "none")
         {
             self.present(alert, animated: true)
             return
@@ -207,6 +223,12 @@ class RegistrationController: UIViewController, UITextFieldDelegate, UITextViewD
         view.addSubview(createGroupButton)
         view.addSubview(profileImageView)
         view.addSubview(profdescriptionLabel)
+        view.addSubview(backButton)
+        
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
+        backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        backButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         
         profileImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
         profileImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 110).isActive = true
