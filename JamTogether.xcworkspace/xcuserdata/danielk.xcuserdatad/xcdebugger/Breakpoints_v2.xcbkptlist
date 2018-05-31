@@ -26,12 +26,12 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/CreateJamSessionController.swift"
-                  timestampString = "549329401.548028"
+                  timestampString = "549421588.501675"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "344"
                   endingLineNumber = "344"
-                  offsetFromSymbolStart = "3694">
+                  offsetFromSymbolStart = "2792">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/CreateJamSessionController.swift"
-                  timestampString = "549329401.549952"
+                  timestampString = "549421588.503301"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "344"
                   endingLineNumber = "344"
-                  offsetFromSymbolStart = "7673">
+                  offsetFromSymbolStart = "5736">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -138,12 +138,12 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Protocol.swift"
-                  timestampString = "549329401.568956"
+                  timestampString = "549421588.521927"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "196"
                   endingLineNumber = "196"
-                  offsetFromSymbolStart = "6602">
+                  offsetFromSymbolStart = "4716">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -153,12 +153,12 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Protocol.swift"
-                  timestampString = "549329401.5709161"
+                  timestampString = "549421588.523527"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "157"
                   endingLineNumber = "157"
-                  offsetFromSymbolStart = "39">
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>

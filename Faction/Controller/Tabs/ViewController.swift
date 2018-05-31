@@ -52,8 +52,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         setupNavBar() // sets up top navigation bar
         
         //adds the + button
-        view.addSubview(addPhoto)
-        setupAddPhoto()
+        //view.addSubview(addPhoto)
+        //setupAddPhoto()
         
         view.addSubview(myStoryandGlobal)
         setupMyStoryandGlobal()
@@ -93,9 +93,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         fetchUser()
         isColliding(curSpan: mapView.region.span.latitudeDelta)
-        view.addSubview(spanMultiplierAdd)
-        view.addSubview(spanMultiplierSub)
-        setupSpanMult()
+        //view.addSubview(spanMultiplierAdd)
+        //view.addSubview(spanMultiplierSub)
+        //setupSpanMult()
         
     }
     override func viewDidAppear(_ animated: Bool) {
