@@ -44,9 +44,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
         // UILPGR- long press for action
-        let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(action))
-        uilpgr.minimumPressDuration = 0.2
-        mapView.addGestureRecognizer(uilpgr)
+        //let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(action))
+        //uilpgr.minimumPressDuration = 0.2
+        //mapView.addGestureRecognizer(uilpgr)
         mapView.delegate = self
         
         setupNavBar() // sets up top navigation bar
@@ -93,9 +93,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         fetchUser()
         isColliding(curSpan: mapView.region.span.latitudeDelta)
-        //view.addSubview(spanMultiplierAdd)
-        //view.addSubview(spanMultiplierSub)
-        //setupSpanMult()
+        view.addSubview(spanMultiplierAdd)
+        view.addSubview(spanMultiplierSub)
+        setupSpanMult()
         
     }
     override func viewDidAppear(_ animated: Bool) {

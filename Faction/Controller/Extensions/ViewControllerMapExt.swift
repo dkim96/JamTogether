@@ -57,7 +57,7 @@ extension ViewController { //functions related to the mapView
         if(_span.latitudeDelta < 0.01){
             let userCoordinate = CLLocationCoordinate2D(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
             //let eyeCoordinate = CLLocationCoordinate2D(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
-            let mapCamera = MKMapCamera(lookingAtCenter: userCoordinate, fromDistance: 1000, pitch: 60, heading: 0)
+            let mapCamera = MKMapCamera(lookingAtCenter: userCoordinate, fromDistance: 982.85, pitch: 56.513347, heading: 359.999997438679)
             mapView.setCamera(mapCamera, animated: true)
         }
     }
@@ -100,7 +100,7 @@ extension ViewController { //functions related to the mapView
         }
         var check = true
         mapView.deselectAnnotation(annotationView.annotation, animated: false)
-        if(groups.count > 0){
+        /*if(groups.count > 0){
             for i in 0...groups.count-1{
                 for j in 0...groups[i].count-1{
                     if((annotationView.annotation?.title)! == String(pins[i][j])){
@@ -158,7 +158,7 @@ extension ViewController { //functions related to the mapView
                     }
                 }
             }
-        }
+        }*/
         if(check){
             /*
             print(annotationView.annotation?.title as Any)
@@ -255,7 +255,6 @@ extension ViewController { //functions related to the mapView
                 multiPin4.leftAnchor.constraint(equalTo: view.leftAnchor, constant: annotationView.frame.origin.x + 28).isActive = true
                 multiPin5.leftAnchor.constraint(equalTo: view.leftAnchor, constant: annotationView.frame.origin.x + 78).isActive = true
                 multiPin6.leftAnchor.constraint(equalTo: view.leftAnchor, constant: annotationView.frame.origin.x + 128).isActive = true
-                
                 multiPin6.topAnchor.constraint(equalTo: view.topAnchor, constant: annotationView.frame.origin.y - 12).isActive = true
                 multiPin6.layer.zPosition = 5
             }

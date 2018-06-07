@@ -68,12 +68,12 @@ extension ViewController {
     }
     
     func setupSpanMult(){
-        spanMultiplierAdd.centerXAnchor.constraint(equalTo: addPhoto.centerXAnchor).isActive = true
-        spanMultiplierAdd.bottomAnchor.constraint(equalTo: addPhoto.topAnchor, constant: -10).isActive = true
+        spanMultiplierAdd.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 140).isActive = true
+        spanMultiplierAdd.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
         spanMultiplierAdd.widthAnchor.constraint(equalToConstant: 40).isActive = true
         spanMultiplierAdd.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        spanMultiplierSub.centerXAnchor.constraint(equalTo: addPhoto.centerXAnchor).isActive = true
+        spanMultiplierSub.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 140).isActive = true
         spanMultiplierSub.bottomAnchor.constraint(equalTo: spanMultiplierAdd.topAnchor, constant: -10).isActive = true
         spanMultiplierSub.widthAnchor.constraint(equalToConstant: 40).isActive = true
         spanMultiplierSub.heightAnchor.constraint(equalToConstant: 40).isActive = true

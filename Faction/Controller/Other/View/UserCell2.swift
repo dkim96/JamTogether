@@ -3,6 +3,8 @@
 import UIKit
 import Firebase
 
+
+
 class UserCell2: UITableViewCell {
     
     var seconds = Int()
@@ -100,7 +102,7 @@ class UserCell2: UITableViewCell {
     
     let typeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Skill Level: 5"
+        label.text = "(Position Empty: Click to join)"
         label.font = UIFont(name: "Raleway-Medium", size: 13)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -111,10 +113,10 @@ class UserCell2: UITableViewCell {
     let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "bluebg")
+        imageView.image = resizeImage(image: UIImage(named: "bluebg")!, targetSize: CGSize(width: 100, height: 100))
         imageView.layer.cornerRadius = 24
         imageView.layer.masksToBounds = true
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -135,13 +137,13 @@ class UserCell2: UITableViewCell {
             
         photoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
             photoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-            //photoImageView.widthAnchor.constraint(equalToConstant: 505).isActive = true
+            photoImageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
             //photoImageView.heightAnchor.constraint(equalToConstant: 125).isActive = true
         
-        mainLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 55).isActive = true
+        mainLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100).isActive = true
         mainLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
         
-            profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 50).isActive = true
+            profileImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100).isActive = true
             profileImageView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 5).isActive = true
             profileImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
             profileImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
@@ -164,3 +166,29 @@ class UserCell2: UITableViewCell {
     
 }
 
+
+func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+    let size = image.size
+    
+    let widthRatio  = targetSize.width  / size.width
+    let heightRatio = targetSize.height / size.height
+    
+    // Figure out what our orientation is, and use that to form the rectangle
+    var newSize: CGSize
+    if(widthRatio > heightRatio) {
+        newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+    } else {
+        newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+    }
+    
+    // This is the rect that we've calculated out and this is what is actually used below
+    let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+    
+    // Actually do the resizing to the rect using the ImageContext stuff
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+    image.draw(in: rect)
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return newImage!
+}

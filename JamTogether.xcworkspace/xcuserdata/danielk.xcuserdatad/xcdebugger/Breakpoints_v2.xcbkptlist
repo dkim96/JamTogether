@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Faction/Controller/Tabs/CreateJamSessionController.swift"
-            timestampString = "549329099.419291"
+            timestampString = "549874506.750114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "344"
@@ -26,7 +26,7 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/CreateJamSessionController.swift"
-                  timestampString = "549421588.501675"
+                  timestampString = "549874118.804153"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "344"
@@ -41,7 +41,7 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Controller/Tabs/CreateJamSessionController.swift"
-                  timestampString = "549421588.503301"
+                  timestampString = "549874118.806033"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "344"
@@ -138,7 +138,7 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Protocol.swift"
-                  timestampString = "549421588.521927"
+                  timestampString = "549874118.824389"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "196"
@@ -153,7 +153,7 @@
                   moduleName = "Faction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/danielk/Desktop/JamTogether/Faction/Protocol.swift"
-                  timestampString = "549421588.523527"
+                  timestampString = "549874118.826288"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "157"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Faction/Controller/Tabs/JoinSessionController.swift"
-            timestampString = "549424273.071659"
+            timestampString = "549874506.7502379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
@@ -209,6 +209,102 @@
                   offsetFromSymbolStart = "13619">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Controller/Tabs/ProfileViewController.swift"
+            timestampString = "549874506.750288"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "viewDidAppear()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Controller/Tabs/ProfileViewController.swift"
+            timestampString = "549874506.7503361"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "viewDidAppear()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Controller/Tabs/ProfileViewController.swift"
+            timestampString = "549874506.750379"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Controller/Tabs/ProfileViewController.swift"
+            timestampString = "549874506.750419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Controller/Extensions/ViewControllerExt.swift"
+            timestampString = "549874506.75046"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "setupSpanMult()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Faction/Controller/Extensions/ViewControllerExt.swift"
+            timestampString = "549874506.750507"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "setupSpanMult()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

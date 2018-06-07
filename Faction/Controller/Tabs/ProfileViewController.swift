@@ -212,8 +212,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(handleRefresh))
         navigationItem.title = "Profile"
         // Update User into Profile
+        if(FIRAuth.auth()?.currentUser?.uid != nil){ // as long as their is a user
+            var id = FIRAuth.auth()?.currentUser?.uid
+            fetchUser(id: id!)
+        }
         if(user == nil){
             var id = FIRAuth.auth()?.currentUser?.uid
             fetchUser(id: id!)
@@ -222,16 +227,27 @@ class ProfileViewController: UIViewController {
         setupOverlay()
     }
     
+    func handleRefresh(){
+        //remove set annotations, bubbles, etc
+        // refetch
+        fetchUser(id: (FIRAuth.auth()?.currentUser?.uid)!)
+    }
+    
     func viewDidAppear() {
         super.viewDidAppear(false)
         navigationItem.title = "Profile"
         // Update User into Profile
+        if(FIRAuth.auth()?.currentUser?.uid != nil){ // as long as their is a user
+            var id = FIRAuth.auth()?.currentUser?.uid
+            fetchUser(id: id!)
+        }
         if(user == nil){
             var id = FIRAuth.auth()?.currentUser?.uid
             fetchUser(id: id!)
         }
         view.backgroundColor = UIColor.white
         setupOverlay()
+        
     }
     
     func handleInstagram(){
@@ -318,6 +334,8 @@ class ProfileViewController: UIViewController {
         
         backgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         backgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        backgroundView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         
         avatarView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
         avatarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true

@@ -201,7 +201,8 @@
         if(sessionInfo.instruments?[indexPath.row-2]["user"] as! String != ""){
             cell2.profileImageView.image = fetchedPics[sessionInfo.instruments?[indexPath.row-2]["user"] as! String]
             cell2.photoImageView.image = UIImage(named: "bluebg")
-            cell2.typeLabel.text = fetchedNames[sessionInfo.instruments?[indexPath.row-2]["user"] as! String]
+            
+            cell2.typeLabel.text = "Name: \(fetchedNames[sessionInfo.instruments?[indexPath.row-2]["user"] as! String] as! String)"
         }
         
         return cell2
@@ -227,11 +228,11 @@
                 // fill in space for current user.. send to fb
                 val = indexPath.row-2
                 let alert2 = UIAlertController(title: "You want to play \(sessionInfo.instruments![indexPath.row-2]["instrument"]! as! String) for this event", message: "Are you sure you want to play this instrument?", preferredStyle: UIAlertControllerStyle.alert)
-                alert2.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
+                alert2.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert2, animated: true, completion: nil)
+                alert2.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.cancel, handler: { action in
                     self.handleAlert()
                 }))
-                alert2.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
-                self.present(alert2, animated: true, completion: nil)
             }
             else{
                 self.present(alert, animated: true, completion: nil)
@@ -264,12 +265,12 @@
                 var followers = dictionary["groupMembers"] as! [[String:AnyObject]]
                 var instr = dictionary["instruments"] as! [[String:AnyObject]]
                 DispatchQueue.main.async(execute: {
-                    for i in 0...(followers.count)-1{
+                    /*for i in 0...(followers.count)-1{
                         if(followers[i]["id"] as! String == (FIRAuth.auth()?.currentUser?.uid)!){
                             print("this user is already following/ can only apply for one instrument")
                             return
                         }
-                    }
+                    }*/
                     let newUser = ["time": Int(Date().timeIntervalSince1970),
                                    "id" : (FIRAuth.auth()?.currentUser?.uid)!,
                                    "groupScore":0,

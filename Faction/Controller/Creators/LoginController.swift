@@ -8,6 +8,17 @@ class LoginController: UIViewController {
     //var messagesController: MessagesController? // optional to add to view screen line 55 fetchUserAndSetupNavBarTitle()
     var ver = "0.1"
     
+    lazy var titleImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logo2")
+        //imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        //imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        //imageView.isUserInteractionEnabled = true
+        return imageView
+    }()
+    
+    
     let titleLabel : UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
@@ -192,16 +203,19 @@ class LoginController: UIViewController {
         view.addSubview(loginRegisterButton)
         //view.addSubview(profileImageView)
         view.addSubview(loginRegisterSegmentedControl)
+        
         view.addSubview(titleLabel)
-        //view.addSubview(nicknameTextField)
-        //view.addSubview(background)
+        
+        view.addSubview(titleImage)
+        titleImage.layer.zPosition = 10
         
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        //titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        //titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        //nicknameTextField.layer.zPosition = 2
-        //background.layer.zPosition = 1
+        
+        titleImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        titleImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        titleImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        titleImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         setupInputsContainerView()
         setupLoginRegisterButton()

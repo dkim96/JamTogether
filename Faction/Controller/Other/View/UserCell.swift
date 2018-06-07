@@ -155,9 +155,10 @@ class UserCell: UITableViewCell {
         //need x,y,width,height anchors
         
         photoImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        photoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        //photoImageView.widthAnchor.constraint(equalToConstant: 505).isActive = true
+        photoImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        //photoImageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         //photoImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+
         
         profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25).isActive = true
         profileImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive = true
